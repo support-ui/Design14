@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Design 14</string>
+
+    <string-array name="code">
+        <item>+51</item>
+        <item>+52</item>
+    </string-array>
+
+</resources>

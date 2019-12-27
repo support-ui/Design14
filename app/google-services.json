@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "555947690314",
+    "firebase_url": "https://authsmsfirebase.firebaseio.com",
+    "project_id": "authsmsfirebase",
+    "storage_bucket": "authsmsfirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:555947690314:android:d3f42707dd821d068919b3",
+        "android_client_info": {
+          "package_name": "com.example.design14"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "555947690314-rm245sv3f88vkj8b54oaa2vpk08k4i7r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.design14",
+            "certificate_hash": "0eeed2faee9166004ad2d5a778d1b4da479afbc8"
+          }
+        },
+        {
+          "client_id": "555947690314-hs4u06cs81khgm969dtqk0ad5457nq7b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_D8w1CGdrPBijdZvY4v9bBmUPVn_tKxU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "555947690314-hs4u06cs81khgm969dtqk0ad5457nq7b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
