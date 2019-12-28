@@ -83,7 +83,7 @@ public class CodeVerification extends AppCompatActivity {
                 if(task.isSuccessful()){
                     Intent intent = new Intent(CodeVerification.this,ProfileActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    SavePreferences();
+                    sharedPreferencesClass.savePreferences();
                     dialog.dismiss();
                     startActivity(intent);
                 }else{
@@ -126,10 +126,6 @@ public class CodeVerification extends AppCompatActivity {
             Toast.makeText(CodeVerification.this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     };
-
-    public void SavePreferences(){
-        sharedPreferencesClass.SavePreferences();
-    }
 
 
 }

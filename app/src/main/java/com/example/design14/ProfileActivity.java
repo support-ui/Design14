@@ -30,11 +30,6 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
 
 
-    public void UpdatePreferences(){
-        sharedPreferencesClass.UpdatePreferences();
-
-    }
-
     @Override
     public void onClick(View v) {
         dialog.setMessage("disconnecting...");
@@ -47,7 +42,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        UpdatePreferences();
+                       sharedPreferencesClass.updatePreferences();
                         finish();
                     }
                 }, time);

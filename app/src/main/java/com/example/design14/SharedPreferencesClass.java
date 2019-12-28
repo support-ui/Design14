@@ -11,7 +11,7 @@ public class SharedPreferencesClass {
         this.mContex = mContex;
     }
 
-    public void SavePreferences(){
+    public void savePreferences(){
         SharedPreferences statusPreferences = mContex.getSharedPreferences("status",MODE_PRIVATE);
         SharedPreferences.Editor editor = statusPreferences.edit();
         Boolean valor = true;
@@ -19,7 +19,7 @@ public class SharedPreferencesClass {
         editor.commit();
     }
 
-    public void CargarPreferences(){
+    public void chargePreferences(){
         android.content.SharedPreferences statusPreferences = mContex.getSharedPreferences("status",MODE_PRIVATE);
 
         status = statusPreferences.getBoolean("checked",false);
@@ -32,7 +32,7 @@ public class SharedPreferencesClass {
 
     }
 
-    public void UpdatePreferences(){
+    public void updatePreferences(){
         SharedPreferences statusPreferences = mContex.getSharedPreferences("status",MODE_PRIVATE);
         SharedPreferences.Editor editor = statusPreferences.edit();
         Boolean valor = false;

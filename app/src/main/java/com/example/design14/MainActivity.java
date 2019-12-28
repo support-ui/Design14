@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         txtPhoneNumber = findViewById(R.id.txtPhoneNumber);
         btnValidate = findViewById(R.id.btnValidate);
         sharedPreferencesClass = new SharedPreferencesClass(this);
-        chargePreferences();
+        sharedPreferencesClass.chargePreferences();
         btnValidate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,8 +44,4 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void chargePreferences(){
-        sharedPreferencesClass.CargarPreferences();
-
-    }
 }
