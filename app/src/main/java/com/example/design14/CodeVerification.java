@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.arch.core.executor.TaskExecutor;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -44,6 +46,7 @@ public class CodeVerification extends AppCompatActivity {
         dialog.show();
         String phoneNumber = getIntent().getStringExtra("phoneNumber");
         sendVerificationCode(phoneNumber);
+
         txtCode = findViewById(R.id.txtCode);
         btnSigIn = findViewById(R.id.btnSigIn);
 
@@ -77,6 +80,7 @@ public class CodeVerification extends AppCompatActivity {
                 if(task.isSuccessful()){
                     Intent intent = new Intent(CodeVerification.this,ProfileActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    SavePreferences();
                     dialog.dismiss();
                     startActivity(intent);
                 }else{
@@ -119,4 +123,17 @@ public class CodeVerification extends AppCompatActivity {
             Toast.makeText(CodeVerification.this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     };
+
+    //Shared Preferences
+
+    public void SavePreferences(){
+            SharedPreferences statusPreferences = getSharedPreferences("status",MODE_PRIVATE);
+            SharedPreferences.Editor editor = statusPreferences.edit();
+            Boolean valor = true;
+            editor.putBoolean("checked",valor);
+            editor.commit();
+
+    }
+
+
 }
