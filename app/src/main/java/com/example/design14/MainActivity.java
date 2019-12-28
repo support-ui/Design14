@@ -14,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnValidate;
     String number;
     Boolean status=false;
+
+    SharedPreferencesClass sharedPreferencesClass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
         txtPhoneNumber = findViewById(R.id.txtPhoneNumber);
         btnValidate = findViewById(R.id.btnValidate);
+        sharedPreferencesClass = new SharedPreferencesClass(this);
         chargePreferences();
-
         btnValidate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,15 +45,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void chargePreferences(){
-        SharedPreferences statusPreferences = getSharedPreferences("status",MODE_PRIVATE);
-
-        status = statusPreferences.getBoolean("checked",false);
-
-        if(status ==true){
-            Intent intent = new Intent(MainActivity.this,ProfileActivity.class);
-            startActivity(intent);
-            finish();
-        }
+        sharedPreferencesClass.CargarPreferences();
 
     }
 }

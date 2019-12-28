@@ -15,10 +15,13 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     private Button btnSigOut;
     private ProgressDialog dialog;
     private int time = 3000;
+
+    SharedPreferencesClass sharedPreferencesClass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        sharedPreferencesClass = new SharedPreferencesClass(this);
         btnSigOut = findViewById(R.id.btnSigOut);
         btnSigOut.setOnClickListener(this);
         dialog = new ProgressDialog(this);
@@ -28,11 +31,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
 
     public void UpdatePreferences(){
-        SharedPreferences statusPreferences = getSharedPreferences("status",MODE_PRIVATE);
-        SharedPreferences.Editor editor = statusPreferences.edit();
-        Boolean valor = false;
-        editor.putBoolean("checked",valor);
-        editor.commit();
+        sharedPreferencesClass.UpdatePreferences();
 
     }
 

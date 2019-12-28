@@ -34,11 +34,14 @@ public class CodeVerification extends AppCompatActivity {
 
     ProgressDialog dialog;
 
+    SharedPreferencesClass sharedPreferencesClass;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_code_verification);
+        sharedPreferencesClass = new SharedPreferencesClass(this);
         mAuth = FirebaseAuth.getInstance();
         dialog = new ProgressDialog(this);
         dialog.setMessage("Waiting for code");
@@ -124,15 +127,8 @@ public class CodeVerification extends AppCompatActivity {
         }
     };
 
-    //Shared Preferences
-
     public void SavePreferences(){
-            SharedPreferences statusPreferences = getSharedPreferences("status",MODE_PRIVATE);
-            SharedPreferences.Editor editor = statusPreferences.edit();
-            Boolean valor = true;
-            editor.putBoolean("checked",valor);
-            editor.commit();
-
+        sharedPreferencesClass.SavePreferences();
     }
 
 
